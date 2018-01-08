@@ -1,0 +1,140 @@
+.header {
+  border-top-width: 3px;
+  border-top-style: solid;
+  border-top-color: #FF0000;
+  background: #ffffff;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.10);
+  position: relative;
+  height: 76px;
+  /* z-index: 999; */
+
+  .singtel_logo {
+    background-image: url("/images/cast_logo.png");
+    background-size: 76px 42px;
+    width: 76px;
+    height: 42px;
+    text-indent: -99999px;
+    float: left;
+    margin-top: 17px;
+  }
+
+  .nav-links {
+      margin-top: 0px;
+      margin-bottom: 0px;
+
+      li {
+          list-style-type: none;
+          margin-top: 28px;
+      }
+
+      li a {
+          text-decoration: none;
+      }
+
+      &.left {
+          li {
+             float: left;
+             margin-left: 40px;
+          }
+      }
+
+      &.right {
+          li {
+              float: right;
+              margin-right: 40px;
+          }
+          li:first-child {
+              margin-right: 0px;
+          }
+          li:nth-child(2) a {
+              color: $singtel-red;
+          }
+          img {
+              width: 40px;
+              margin-top: -8px;
+          }
+      }
+  }
+// End of header
+}
+
+@include breakpoint(small only) {
+    .header {
+        height: 64px;
+        text-align: center;
+        box-shadow: none;
+        .singtel_logo {
+            float: none;
+            display: inline-block;
+            margin: 14px auto;
+            width: 66px;
+            height: 36px;
+            background-size: 66px 36px;
+        }
+        .authentication-part {
+            float: right;
+            .nav-links {
+                position: absolute;
+                right: 30px;
+                top: 20px;
+                display: inline-block;
+                li {
+                    margin: 0;
+                    float: none;
+                    a {
+                        // height: 56px;
+                        // line-height: 56px;
+                        display: block;
+                    }
+                }
+            }
+        }
+        .menu-part {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            .menu-button {
+                &.dropdown-inactive{
+                    background-image: url("/images/ico-menu.png");
+                }
+                &.dropdown-active {
+                    background-image: url("/images/ico-menu-close.png");
+                }
+                background-size: contain;
+                margin-top: 20px;
+                margin-left: 30px;
+                width: 24px;
+                display: inline-block;
+                position: absolute;
+                text-indent: -9999px;
+                left: 0;
+            }
+        }
+    }
+
+    .mobile-menu-dropdown {
+        margin: 0px;
+        padding: 0px;
+        background: white;
+        &.dropdown-active {
+            display: block;
+        }
+        &.dropdown-inactive {
+            display: none;
+        }
+        ul {
+            margin: 0px;
+            padding: 0px;
+        }
+        li {
+            list-style-type: none;
+            border-top: 1px solid $background-grey;
+            padding: 14px 30px;
+            text-align: left;
+            float: none;
+            margin: 0;
+        }
+    }
+}
