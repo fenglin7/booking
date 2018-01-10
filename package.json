@@ -9,6 +9,7 @@
     "babel-eslint": "^8.1.2",
     "babel-loader": "^7.1.2",
     "eslint": "^4.15.0",
+    "firebase": "^4.8.1",
     "history": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
