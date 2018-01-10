@@ -17,19 +17,14 @@ export class Listings extends Component {
         } = this.props
         return (
             <div>Hi this is listings
-                <br/>
+                <br />
                 <Link to='/'>Home</Link>
-                <Listing />
-                {/* <form>
-                    <label>ID</label>
-                    <input type='text' name='listingID'/>
-                    <textarea
-                    />
-                    <button type='button'
-                    onClick={ event => validateAndAddListing(event) } > Submit </button>
-                </form> */}
+                <br />
+                All Listings Available
+                <br />
+                {listings && listings.map((listing) => <Listing key={listing.id} listing={listing} /> )}
 
-                <ListingForm submitAction={ validateAndAddListing }/>
+                <ListingForm submitAction={validateAndAddListing} />
             </div>
         )
     }
@@ -37,7 +32,7 @@ export class Listings extends Component {
 
 
 const mapStateToProps = state => ({
-    listings: state.listings
+    listings: state.listing.listings
 })
 
 const mapDispatchToProps = dispatch => ({

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { validateAndAddListing } from '../../features/listing/index';
 
 export default class ListingForm extends Component {
     constructor(props) {
