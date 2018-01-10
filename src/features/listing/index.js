@@ -11,11 +11,18 @@ export default (state = initialState, action) => {
         case ADD_LISTING:
             return {
                 ...state,
+                listings: [...state.listings, action.listing]
             }
 
         case REMOVE_LISTING:
+            const listingIndexToRemove = state.listings.findIndex(item => (
+                item.id === action.id
+            ))
             return {
                 ...state,
+                listings: [
+                    ...state.cart.slice(0, listingIndexToRemove), ...state.cart.slice(listingIndexToRemove + 1)
+                ]
             }
 
         case UPDATE_LISTING:
@@ -44,4 +51,14 @@ export const removeListing = (listing) => {
             listing
         })
     }
+}
+
+export const validateAndAddListing = (id, description) => (
+    dispatch
+) => {
+    console.log('id', id, 'description', description)
+    dispatch(addListing({
+        id: id, 
+        description: description
+    }))
 }
