@@ -1,6 +1,10 @@
+import { listingsRef } from '../../utils/fire';
+
 export const ADD_LISTING = 'listing/ADD_LISTING'
 export const REMOVE_LISTING = 'listing/REMOVE_LISTING'
 export const UPDATE_LISTING = 'listing/UPDATE_LISTING'
+export const SAVE_FIREBASE_LISTING = 'listing/SAVE_FIREBASE_LISTING'
+export const FETCH_FIREBASE_LISTING = 'listing/FETCH_FIREBASE_LISTING'
 
 const initialState = {
     listings: []
@@ -40,6 +44,14 @@ export default (state = initialState, action) => {
                 }
             }
 
+        case FETCH_FIREBASE_LISTING:
+            var arr2 = Object.keys(action.payload).map(function (k) {
+                return { description: action.payload[k], id: k };
+            });
+            return {
+                ...state,
+                listings: arr2
+            }
         default:
             return state
     }
@@ -73,6 +85,24 @@ export const updateListing = (id, description) => {
     }
 }
 
+export const saveFirebaseListing = (listings) => {
+    return dispatch => {
+        dispatch({
+            type: SAVE_FIREBASE_LISTING,
+            listings
+        })
+    }
+}
+
+export const addFirebaseListing = (listing) => {
+    return dispatch => {
+        dispatch({
+            type: SAVE_FIREBASE_LISTING,
+            listing
+        })
+    }
+}
+
 export const validateAndAddListing = (id, description) => (
     dispatch,
     getState
@@ -93,3 +123,11 @@ export const validateAndAddListing = (id, description) => (
     }
 }
 
+export const getFireBaseListings = () => async (dispatch) => {
+    listingsRef.on("value", snapshot => {
+        dispatch({
+            type: FETCH_FIREBASE_LISTING,
+            payload: snapshot.val()
+        });
+    });
+}

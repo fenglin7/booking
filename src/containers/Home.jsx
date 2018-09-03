@@ -35,7 +35,7 @@ export default class Home extends Component {
                 <br />
                 <Link to='/listings'>Listings</Link>
                 <div>
-                    <h2>FIREBASE form</h2>
+                    <h2>Message Board</h2>
                     <form onSubmit={this.addMessage.bind(this)}>
                         <input type="text" ref={el => this.inputEl = el} />
                         <input type="submit" />
