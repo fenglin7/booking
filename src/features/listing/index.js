@@ -45,12 +45,12 @@ export default (state = initialState, action) => {
             }
 
         case FETCH_FIREBASE_LISTING:
-            var arr2 = Object.keys(action.payload).map(function (k) {
+            var arr = Object.keys(action.payload).map(function (k) {
                 return { description: action.payload[k], id: k };
             });
             return {
                 ...state,
-                listings: arr2
+                listings: arr
             }
         default:
             return state

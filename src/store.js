@@ -3,6 +3,7 @@ import { routerMiddleware, routerReducer } from 'react-router-redux'
 import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
 import listing from './features/listing'
+import home from './features/home'
 
 export const history = createHistory()
 
@@ -23,7 +24,8 @@ if (process.env.NODE_ENV === 'development') {
 
 const rootReducer = combineReducers({
     routing: routerReducer,
-    listing
+    listing,
+    home
 })
 
 const composedEnhancers = compose(
