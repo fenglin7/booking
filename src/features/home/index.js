@@ -1,6 +1,6 @@
-import { messagesRef } from '../../utils/fire';
+// import { messagesRef } from '../../utils/fire';
 
-export const FETCH_FIREBASE_MESSAGES = 'listing/FETCH_FIREBASE_MESSAGES'
+export const FETCH_FIREBASE_MESSAGES = 'home/FETCH_FIREBASE_MESSAGES'
 
 const initialState = {
     messages: []
@@ -87,11 +87,11 @@ export default (state = initialState, action) => {
 //     }
 // }
 
-export const getFireBaseMessages = () => async (dispatch) => {
-    messagesRef.on("value", snapshot => {
-        dispatch({
-            type: FETCH_FIREBASE_MESSAGES,
-            payload: snapshot.val()
-        });
-    });
-}
+// export const getFireBaseMessages = () => async (dispatch) => {
+//     messagesRef.on("value", snapshot => {
+//         dispatch({
+//             type: FETCH_FIREBASE_MESSAGES,
+//             payload: snapshot.val()
+//         });
+//     });
+// }

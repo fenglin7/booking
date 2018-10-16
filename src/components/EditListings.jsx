@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import * as listingActions from '../features/listing'
 
 import Listing from '../presentors/Listing/Listing.jsx'
-import ListingForm from '../presentors/ListingForm/ListingForm.jsx'
+// import ListingForm from '../presentors/ListingForm/ListingForm.jsx'
 
 
 
@@ -17,7 +17,7 @@ export class EditListings extends Component {
         } = this.props
         return (
             <div>
-                <ListingForm submitAction={updateListing} />
+                {/* <ListingForm submitAction={updateListing} /> */}
                 <br />
                 <Link to='/listings'>Back to Listings</Link>
             </div>

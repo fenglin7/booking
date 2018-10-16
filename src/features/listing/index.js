@@ -1,4 +1,4 @@
-import { listingsRef } from '../../utils/fire';
+// import { listingsRef } from '../../utils/fire';
 
 export const ADD_LISTING = 'listing/ADD_LISTING'
 export const REMOVE_LISTING = 'listing/REMOVE_LISTING'
@@ -123,11 +123,11 @@ export const validateAndAddListing = (id, description) => (
     }
 }
 
-export const getFireBaseListings = () => async (dispatch) => {
-    listingsRef.on("value", snapshot => {
-        dispatch({
-            type: FETCH_FIREBASE_LISTING,
-            payload: snapshot.val()
-        });
-    });
-}
+// export const getFireBaseListings = () => async (dispatch) => {
+//     listingsRef.on("value", snapshot => {
+//         dispatch({
+//             type: FETCH_FIREBASE_LISTING,
+//             payload: snapshot.val()
+//         });
+//     });
+// }

@@ -1,5 +1,13 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.ptSans {
+  font-family: 'PT Sans', sans-serif;
+}
+.mukta {
+  font-family: 'Mukta', sans-serif;
 }
 
 .App-logo {

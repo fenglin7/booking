@@ -1,0 +1,15 @@
+export const ADD_LISTING = 'listing/ADD_LISTING'
+export const REMOVE_LISTING = 'listing/REMOVE_LISTING'
+export const UPDATE_LISTING = 'listing/UPDATE_LISTING'
+export const SAVE_FIREBASE_LISTING = 'listing/SAVE_FIREBASE_LISTING'
+export const FETCH_FIREBASE_LISTING = 'listing/FETCH_FIREBASE_LISTING'
+//Auth actions types
+export const SIGNIN_SUCCESS = 'SIGNIN_SUCCESS'
+export const SIGNIN_ERROR = 'SIGNIN_ERROR'
+export const SIGNUP_SUCCESS = 'SIGNUP_SUCCESS'
+export const SIGNUP_ERROR = 'SIGNUP_ERROR'
+export const SIGNOUT_SUCCESS = 'SIGNOUT_SUCCESS'
+export const SIGNOUT_ERROR = 'SIGNOUT_ERROR'
+//Message action types
+export const ADD_MESSAGE_SUCCESS = 'ADD_MESSAGE_SUCCESS'
+export const ADD_MESSAGE_ERROR = 'ADD_MESSAGE_ERROR'
